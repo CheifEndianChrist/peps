@@ -82,10 +82,9 @@ def test_pep_details(test_input, expected):
             "First Last",
             [_Author(full_name="First Last", email="")],
         ),
-        pytest.param(
+        (
             "First Last <user at example.com>",
             [_Author(full_name="First Last", email="user@example.com")],
-            marks=pytest.mark.xfail,
         ),
         pytest.param(
             " , First Last,",
