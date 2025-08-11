@@ -201,6 +201,6 @@ def _parse_author(data: str) -> list[_Author]:
             raise ValueError("Name is empty!")
 
         author = author.replace(jr_placeholder, ", Jr")
-        email = email.lower()
+        email = email.replace(" at ", "@").lower()
         author_list.append(_Author(author, email))
     return author_list
